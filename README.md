@@ -2,7 +2,8 @@
 This repo holds the Pytorch implementation of MedIM:<br />
 
 **[MICCAI2023] MedIM: Boost Medical Image Representation via Radiology Report-guided Masking**
-**[Journal] Rethinking Masked Image Modeling for Medical Image Representation**
+
+**[Medical Image Analysis, under review] Rethinking Masked Image Modeling for Medical Image Representation**
 
 
 ### Requirements 

@@ -81,11 +81,11 @@ for MedIM pre-training.
 ### Finetune on downstream tasks
 * We evlauate the performance of MedIM framework on five downstream tasks: classification and semantic segmentation.
 ```
-CUDA_VISIBLE_DEVICES=0 python medim_finetuner.py --gpus 1 --dataset chexpert5 --batch_size 512 --accumulate 8 --path MedIM_weights.ckpt --outdir Cls_chexpert5 --outpath MedIM_1 --data_pct 1
-CUDA_VISIBLE_DEVICES=0 python medim_finetuner.py --gpus 1 --dataset chexpert14 --batch_size 512 --accumulate 8 --path MedIM_weights.ckpt --outdir Cls_chexpert14 --outpath MedIM_1 --data_pct 1
-CUDA_VISIBLE_DEVICES=0 python medim_finetuner.py --gpus 1 --dataset covidx --batch_size 96 --path MedIM_weights.ckpt --outdir Cls_covidx --outpath MedIM_1 --data_pct 1
-CUDA_VISIBLE_DEVICES=0 python medim_finetuner.py --gpus 1 --dataset vindr --batch_size 512 --path MedIM_weights.ckpt --outdir Cls_vindr --outpath MedIM_1 --data_pct 1
-CUDA_VISIBLE_DEVICES=0 python medim_segmenter.py --gpus 1 --dataset siim --batch_size 32 --ckpt_path MedIM_weights.ckpt --outdir Seg_siim --outpath MedIM_1 --data_pct 1 --seed 123
+CUDA_VISIBLE_DEVICES=0 python medim_finetuner.py --gpus 1 --dataset chexpert5 --batch_size 512 --accumulate 8 --path MedIM/last.ckpt --outdir Cls_chexpert5 --outpath MedIM_1 --data_pct 1
+CUDA_VISIBLE_DEVICES=0 python medim_finetuner.py --gpus 1 --dataset chexpert14 --batch_size 512 --accumulate 8 --path MedIM/last.ckpt --outdir Cls_chexpert14 --outpath MedIM_1 --data_pct 1
+CUDA_VISIBLE_DEVICES=0 python medim_finetuner.py --gpus 1 --dataset covidx --batch_size 96 --path MedIM/last.ckpt --outdir Cls_covidx --outpath MedIM_1 --data_pct 1
+CUDA_VISIBLE_DEVICES=0 python medim_finetuner.py --gpus 1 --dataset vindr --batch_size 512 --path MedIM/last.ckpt --outdir Cls_vindr --outpath MedIM_1 --data_pct 1
+CUDA_VISIBLE_DEVICES=0 python medim_segmenter.py --gpus 1 --dataset siim --batch_size 32 --ckpt_path MedIM/last.ckpt --outdir Seg_siim --outpath MedIM_1 --data_pct 1 --seed 123
 ```
 
 

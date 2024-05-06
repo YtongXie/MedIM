@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+cosine_annealing_warmup/__init__.py
+cosine_annealing_warmup/scheduler.py
+cosine_annealing_warmup.egg-info/PKG-INFO
+cosine_annealing_warmup.egg-info/SOURCES.txt
+cosine_annealing_warmup.egg-info/dependency_links.txt
+cosine_annealing_warmup.egg-info/top_level.txt

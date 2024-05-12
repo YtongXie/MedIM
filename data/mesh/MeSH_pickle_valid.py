@@ -35,7 +35,7 @@ class MultimodalPretrainingDataset(data.Dataset):
             self.df = self.df.sample(frac=data_pct, random_state=42)
         self.df.reset_index(drop=True, inplace=True)
 
-        with open(os.path.join(BASE_DIR, '../../data/mesh/mesh_ACE_pre.txt'), mode='rb') as file:
+        with open(os.path.join('mesh_ACE_pre.txt'), mode='rb') as file:
             mesh = file.readlines()
         
         self.MeSH = []

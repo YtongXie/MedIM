@@ -14,12 +14,7 @@ from transformers import BertTokenizer, BertModel
 from sklearn.metrics.pairwise import cosine_similarity
 from torch.nn import functional as F
 
-MeSH_emebed = torch.load('/home/ytxie/userdisk1/ytxie/SSL/MedIM/data/mesh/mesh_ACE_feats.pth')
-MeSH_emebed = torch.stack(MeSH_emebed).cuda()
-
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-
 
 class MultimodalPretrainingDataset(data.Dataset):
     def __init__(self, split="train", transform=None, data_pct=1.0,
@@ -168,9 +163,6 @@ class MultimodalPretrainingDataset(data.Dataset):
                 for sent_i_w in sent.split(" "):
 
                     tokens = self.tokenizer(sent_i_w, return_tensors='pt')                    
-                    # output = self.model(**tokens.to("cuda:0"))
-                    # score_simi_i = cosine_similarity(output[0].sum(1).cpu().data.numpy(), MeSH_emebed).max(-1)
-                    # score_simi_i = F.cosine_similarity(output[0].sum(1), MeSH_emebed).max(-1).values.cpu().data.numpy()
                     num_words = 0
                     if "_" in sent_i_w:
                         if '_' == sent_i_w:
@@ -340,14 +332,13 @@ def multimodal_collate_fn(batch):
 
 
 if __name__ == "__main__":
-    from mgca.datasets.transforms import DataTransforms
-    from mgca.datasets.data_module import DataModule
+    from medim.datasets.transforms import DataTransforms
+    from medim.datasets.data_module import DataModule
     import cv2
 
     transform = DataTransforms(is_train=True)
-    dataset_train = MultimodalPretrainingDataset(split="valid", transform=transform)
+    dataset_valid = MultimodalPretrainingDataset(split="valid", transform=transform)
     for batch in dataset_valid:
         # if not os.path.exists(batch):
         print(batch)
         print(cv2.imread(str(batch), 0).shape)
-

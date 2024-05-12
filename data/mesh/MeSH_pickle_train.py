@@ -59,7 +59,7 @@ class MultimodalPretrainingDataset(data.Dataset):
     def load_text_data(self, split):
         # get study to captions mapping
         # TODO: check this
-        filepath = os.path.join(BASE_DIR, "../../data/captions_" + split + "_MeSH.pickle")
+        filepath = os.path.join(BASE_DIR, "../../data/captions_" + split + "_HardMatchv1.pickle")
 
         if not os.path.isfile(filepath):
             print(f"Caption file {filepath} does not exit. Creating captions...")

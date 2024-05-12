@@ -50,8 +50,7 @@ class MultimodalPretrainingDataset(data.Dataset):
     def load_text_data(self, split):
         # get study to captions mapping
         # TODO: check this
-        # filepath = os.path.join(BASE_DIR, "../../data/captions_" + split + "_HardMatchv1.pickle")
-        filepath = os.path.join('/home/ytxie/userdisk1/ytxie/SSL/MGCA-main/data/', "captions_" + split + "_HardMatchv1.pickle")
+        filepath = os.path.join(BASE_DIR, "../../data/captions_" + split + "_HardMatchv1.pickle")
 
         with open(filepath, "rb") as f:
             path2sent = pickle.load(f)

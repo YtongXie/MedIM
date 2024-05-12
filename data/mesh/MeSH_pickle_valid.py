@@ -35,7 +35,7 @@ class MultimodalPretrainingDataset(data.Dataset):
             self.df = self.df.sample(frac=data_pct, random_state=42)
         self.df.reset_index(drop=True, inplace=True)
 
-        with open(os.path.join('/home/ytxie/userdisk1/ytxie/SSL/MedIM/data/mesh/mesh_ACE_pre.txt'), mode='rb') as file:
+        with open(os.path.join(BASE_DIR, '../../data/mesh/mesh_ACE_pre.txt'), mode='rb') as file:
             mesh = file.readlines()
         
         self.MeSH = []
@@ -58,7 +58,7 @@ class MultimodalPretrainingDataset(data.Dataset):
     def load_text_data(self, split):
         # get study to captions mapping
         # TODO: check this
-        filepath = os.path.join(BASE_DIR, "../../data/captions_" + split + "_MeSH.pickle")
+        filepath = os.path.join(BASE_DIR, "../../data/captions_" + split + "_HardMatchv1.pickle")
 
         if not os.path.isfile(filepath):
             print(f"Caption file {filepath} does not exit. Creating captions...")

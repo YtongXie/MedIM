@@ -339,6 +339,4 @@ if __name__ == "__main__":
     transform = DataTransforms(is_train=True)
     dataset_valid = MultimodalPretrainingDataset(split="valid", transform=transform)
     for batch in dataset_valid:
-        # if not os.path.exists(batch):
-        print(batch)
-        print(cv2.imread(str(batch), 0).shape)
+        print('Name_id: '+ batch[4], '---Original_shape: ' + str(cv2.imread(batch[4], 0).shape), '---Resize_shape: ' + str((batch[0].shape[-1], batch[0].shape[-2])))

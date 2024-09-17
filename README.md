@@ -3,7 +3,7 @@ This repo holds the Pytorch implementation of MedIM:<br />
 
 **[MICCAI2023] MedIM: Boost Medical Image Representation via Radiology Report-guided Masking**
 
-**[Medical Image Analysis, under review] Rethinking Masked Image Modeling for Medical Image Representation**
+**[Medical Image Analysis] Rethinking Masked Image Modeling for Medical Image Representation**
 
 
 ### Requirements 
@@ -106,8 +106,15 @@ If this code is helpful for your study, please cite:
   year={2023},
   organization={Springer}
 }
-```
-The extended journal version is under review.
 
+@article{xie2024rethinking,
+  title={Rethinking masked image modeling for medical image representation},
+  author={Xie, Yutong and Gu, Lin and Harada, Tatsuya and Zhang, Jianpeng and Xia, Yong and Wu, Qi},
+  journal={Medical Image Analysis},
+  pages={103304},
+  year={2024},
+  publisher={Elsevier}
+}
+```
 ### Contact
 Yutong Xie (yutong.xie678@gmail.com)

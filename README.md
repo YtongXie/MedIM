@@ -64,7 +64,6 @@ Preprocesseding these datasets and split the dataset into train/val/test set usi
 cd data/mesh
 * Run
 ```
-python MeSH_preprocess.py
 python MeSH_pickle_train.py
 python MeSH_pickle_valid.py
 
